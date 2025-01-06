@@ -18,7 +18,7 @@ const config = {
   swcMinify: true,
   i18n: { locales: ["id-ID"], defaultLocale: "id-ID" },
   images: {
-    domains: ['image-cdn-ak.spotifycdn.com', 'image-cdn-fa.spotifycdn.com', 'mosaic.scdn.co'],
+    domains: ['i.scdn.co', 'image-cdn-ak.spotifycdn.com', 'image-cdn-fa.spotifycdn.com', 'mosaic.scdn.co'],
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },

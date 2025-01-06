@@ -38,19 +38,27 @@ export default function Projects() {
       <p className="text-lg mb-8">Daftar putar dan lagu yang sering saya dengarkan di <span className="text-green-400"><Link href={`https://open.spotify.com/user/${process.env.SPOTIFY_ID}`}><a target="_blank" rel="noopener noreferrer" className="border-b border-[#fff4] hover:border-white transition">Spotify</a></Link></span>.</p>
 
       <h2 className="font-bold text-3xl mb-4">Daftar Putar</h2>
-        <TrackList className="pb-16" playlists={topMusic?.playlists} priority={true} />
+        <TrackList playlists={topMusic?.playlists} priority={true} />
+        
+        <hr className="pb-6 border-none h-0.5" />
 
       <h2 className="font-bold text-3xl mb-4">Bulan Ini</h2>
-      <TrackList className="pb-16" tracks={topMusic?.short.items} priority={true} />
+      <TrackList tracks={topMusic?.short.items} priority={true} />
+      
+        <hr className="pb-6 border-none h-0.5" />
 
       <h2 className="font-bold text-3xl mb-4">6 Bulan Terakhir</h2>
-      <TrackList className="pb-16" tracks={topMusic?.medium.items} priority={false} />
+      <TrackList tracks={topMusic?.medium.items} priority={false} />
+      
+        <hr className="pb-6 border-none h-0.5" />
 
       <h2 className="font-bold text-3xl mb-4">Sepanjang Waktu</h2>
-      <TrackList className="pb-16" tracks={topMusic?.long.items} priority={false} />
+      <TrackList tracks={topMusic?.long.items} priority={false} />
+      
+        <hr className="pb-6 border-none h-0.5" />
 
       <h2 className="font-bold text-3xl mb-4">Artis Teratas</h2>
-      <TrackList className="pb-16" topArtists={topMusic?.topArtists} priority={false} />
+      <TrackList topArtists={topMusic?.topArtists} priority={false} />
     </>
   );
 }
