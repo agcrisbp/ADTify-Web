@@ -1,0 +1,11 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "version": 2,
+  "alias": "adtify.vercel.app",
+  "cleanUrls": true,
+  "public": true,
+  "regions": ["sin1"],
+  "rewrites": [
+    { "source": "/.well-known/:path*", "destination": "/.well-known/:path*" }
+  ]
+}
