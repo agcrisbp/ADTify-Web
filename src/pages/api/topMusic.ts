@@ -5,7 +5,7 @@ export type TopMusicResponseSuccess = {
   medium: any;
   long: any;
   topArtists: SpotifyApi.ArtistObjectFull[];
-  playlists: SpotifyApi.PlaylistObjectSimplified[]; // Added playlists
+  playlists: SpotifyApi.PlaylistObjectSimplified[];
 };
 
 export type TopMusicResponseError = { error: unknown };
@@ -69,7 +69,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
       return;
     }
 
-    // Serve cached data if available and not expired
     if (!cached || Date.now() > cachedTime) {
       const [topArtists, short, medium, long, playlists] = await Promise.all([
         fetchTopArtists(accessToken),

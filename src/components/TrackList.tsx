@@ -1,4 +1,4 @@
-import Image from "next/future/image";
+import Image from "next/image";
 
 interface TrackListProps {
   tracks?: SpotifyApi.TrackObjectFull[];
@@ -62,13 +62,13 @@ function Track({ track, priority }: TrackProps) {
         />
       </div>
       <div className="z-20 absolute inset-2 md:inset-4 flex flex-col justify-end transition duration-300 scale-95 opacity-0 group-hover:scale-100 group-hover:opacity-100">
-        <p className="font-bold text-xl md:text-2xl overflow-ellipsis leading-none md:leading-none mb-1">
+        <p className="text-white font-bold text-xl md:text-2xl overflow-ellipsis leading-none md:leading-none mb-1">
           {track.name}
         </p>
         {track.artists.map(artist => (
           <p
             key={artist.id}
-            className="text-sm md:text-base leading-tight md:leading-tight opacity-80"
+            className="text-white text-sm md:text-base leading-tight md:leading-tight opacity-80"
           >
             {artist.name}
           </p>
@@ -102,7 +102,7 @@ function Artist({ artist }: ArtistProps) {
         />
       </div>
       <div className="z-20 absolute inset-2 md:inset-4 flex flex-col justify-end transition duration-300 scale-95 opacity-0 group-hover:scale-100 group-hover:opacity-100">
-        <p className="text-sm md:text-base leading-tight md:leading-tight opacity-80">
+        <p className="text-white text-sm md:text-base leading-tight md:leading-tight opacity-80">
           {artist.name}
         </p>
       </div>
@@ -134,7 +134,7 @@ function Playlist({ playlist }: PlaylistProps) {
         />
       </div>
       <div className="z-20 absolute inset-2 md:inset-4 flex flex-col justify-end transition duration-300 scale-95 opacity-0 group-hover:scale-100 group-hover:opacity-100">
-        <p className="font-bold text-xl md:text-2xl overflow-ellipsis leading-none md:leading-none mb-1">
+        <p className="text-white font-bold text-xl md:text-2xl overflow-ellipsis leading-none md:leading-none mb-1">
           {playlist.name}
         </p>
       </div>

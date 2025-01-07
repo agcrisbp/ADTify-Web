@@ -1,14 +1,13 @@
 // @ts-check
-const withPreact = require("next-plugin-preact");
 const withBundleAnalyzer = require("@next/bundle-analyzer")({
- enabled: process.env.ANALYZE === "true"
+  enabled: process.env.ANALYZE === "true"
 });
 
 const http = require("http");
 
 function redirectHandler(req, res) {
   res.statusCode = 301;
-  res.setHeader("/twitter", "https://twitter.com/agcrisbp");
+  res.setHeader("Location", "https://twitter.com/agcrisbp");
   res.end();
 }
 
@@ -18,16 +17,42 @@ const config = {
   swcMinify: true,
   i18n: { locales: ["id-ID"], defaultLocale: "id-ID" },
   images: {
-    domains: ['i.scdn.co', 'image-cdn-ak.spotifycdn.com', 'image-cdn-fa.spotifycdn.com', 'mosaic.scdn.co'],
+    remotePatterns: [
+        {
+            protocol: 'https',
+            hostname: 'i.ibb.co',
+        },
+        {
+            protocol: 'https',
+            hostname: 'cdn.discordapp.com',
+        },
+        {
+            protocol: 'https',
+            hostname: 'i.scdn.co',
+        },
+        {
+            protocol: 'https',
+            hostname: 'media.discordapp.net',
+        },
+        {
+            protocol: 'https',
+            hostname: 'image-cdn-ak.spotifycdn.com',
+        },
+        {
+            protocol: 'https',
+            hostname: 'image-cdn-fa.spotifycdn.com',
+        },
+        {
+            protocol: 'https',
+            hostname: 'mosaic.scdn.co',
+        },
+    ],
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
   experimental: {
     esmExternals: false,
-    images: {
-      allowFutureImage: true,
-    },
   },
 };
 
-module.exports = withBundleAnalyzer(withPreact(config));
+module.exports = withBundleAnalyzer(config);

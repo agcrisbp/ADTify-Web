@@ -1,8 +1,8 @@
-import Image from "next/future/image";
+import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="text-white text-center py-4">
+    <footer className="text-center py-4">
       <hr className="mb-4 bg-slate-800 border-none h-0.5" />
       <p className="text-sm opacity-75 flex justify-center items-center gap-1">
         Powered by{' '}

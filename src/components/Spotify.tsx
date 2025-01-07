@@ -1,8 +1,7 @@
 import { Icon } from "@iconify/react";
-import Image from "next/future/image";
-import { useEffect, useState } from "preact/hooks";
+import Image from "next/image";
+import { useEffect, useState } from "react";
 import useSWR from "swr";
-import Link from "next/link";
 
 import type {
   NowPlayingResponseError,
@@ -50,7 +49,7 @@ export default function Spotify() {
     <div className="flex gap-2 items-center text-base leading-snug">
       <div className="w-16 h-16 md:w-20 md:h-20 flex-shrink-0">
         {data?.item ? (
-        <Link href={data.item.external_urls.spotify} passHref>
+        <a href={data.item.external_urls.spotify}>
           <Image
             src={
               (data?.item?.type === "track"
@@ -64,7 +63,7 @@ export default function Spotify() {
             className="w-16 h-16 md:w-20 md:h-20 object-cover object-center rounded-lg"
             onContextMenu={(e) => e.preventDefault()}
           />
-        </Link>
+        </a>
         ): null}
       </div>
       <div className="basis-full">
@@ -128,14 +127,15 @@ export default function Spotify() {
               {data.isPlayingNow && data.item ? (
                 <span className="block w-full max-w-sm mt-2">
                   <span className="block h-0.5 rounded overflow-hidden bg-[#5e5e5e]">
-                    <span
-                      className="block h-full bg-white"
-                      style={{
-                        width: `${
-                          (time / (data.item.duration_ms ?? 0)) * 100
-                        }%`,
-                      }}
-                    />
+                  <span
+                    className="block h-full"
+                    style={{
+                      width: `${(time / (data.item.duration_ms ?? 0)) * 100}%`,
+                      backgroundColor: document.body.classList.contains("dark")
+                        ? "#fff"
+                        : "#000",
+                    }}
+                  />
                   </span>
                   <span className="flex items-center text-sm">
                     <span className="basis-full">{formatDuration(time)}</span>
