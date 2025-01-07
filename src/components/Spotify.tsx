@@ -74,7 +74,7 @@ export default function Spotify() {
                 href={data.item.external_urls.spotify}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-bold border-b border-[#fff4] transition hover:border-white"
+                className="font-bold border-b border-invert transition hover:border-invert"
               >
                 {data.item.name}
               </a>
@@ -88,7 +88,7 @@ export default function Spotify() {
                           href={artist.external_urls.spotify}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="border-b border-[#fff4] transition hover:border-white"
+                          className="border-b border-invert transition hover:border-invert"
                         >
                           {artist.name}
                         </a>
@@ -105,7 +105,7 @@ export default function Spotify() {
                   href={data.item.album.external_urls.spotify}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="border-b border-[#fff4] transition hover:border-white"
+                  className="border-b border-invert transition hover:border-invert"
                 >
                   {data.item.album.name}
                 </a>
@@ -116,7 +116,7 @@ export default function Spotify() {
                   href={data.item.show.external_urls.spotify}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="border-b border-[#fff4] transition hover:border-white"
+                  className="border-b border-invert transition hover:border-invert"
                 >
                   {data.item.show.name}
                 </a>{" "}
