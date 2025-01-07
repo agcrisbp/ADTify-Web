@@ -13,7 +13,14 @@ export default function Footer() {
           className="flex items-center"
           onContextMenu={(e) => e.preventDefault()}
         >
-          <Image src="/images/nextjs.svg" width={50} height={50} alt="NextJS Logo" onContextMenu={(e) => e.preventDefault()}/>
+          <Image 
+            src="/images/nextjs.svg" 
+            width={50} 
+            height={50} 
+            alt="NextJS Logo" 
+            className="invert dark:invert-0"
+            onContextMenu={(e) => e.preventDefault()}
+          />
         </a>
       </p>
     </footer>

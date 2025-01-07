@@ -8,11 +8,7 @@
 @layer base {
   html,
   body {
-    @apply transition-colors duration-500 ease-in-out;
-  }
-
-  body {
-    @apply bg-lightBackground text-lightText;
+    @apply transition-colors duration-500 ease-in-out bg-lightBackground text-lightText;
   }
 
   body.dark {
