@@ -19,6 +19,10 @@ export default function Projects() {
       })
       .catch(console.error);
   }, []);
+  
+  const renderSpotify = () => {
+    return topMusic ? <Spotify /> : null;
+  };
 
   return (
     <>
@@ -47,9 +51,11 @@ export default function Projects() {
         .
       </p>
       <div className="mb-1 flex justify-center items-center">
-        <Spotify />
+        {renderSpotify()}
       </div>
+      {renderSpotify() && (
       <hr className="mt-1 mb-6 bg-slate-800 border-none h-0.5" />
+      )}
 
       <h2 className="font-bold text-3xl mb-4">Daftar Putar</h2>
       <TrackList playlists={topMusic?.playlists || []} priority={true} />

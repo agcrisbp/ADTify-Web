@@ -98,7 +98,7 @@ export default function Spotify() {
                 </>
               )}
             </p>
-            {"album" in data.item ? ( // Use "album" in data.item
+            {"album" in data.item ? (
               <p className="opacity-80">
                 Album{" "}
                 <a
@@ -111,7 +111,6 @@ export default function Spotify() {
                 </a>
               </p>
             ) : (
-              // Display Show information for episodes
               <p className="opacity-80">
                 Podcast{" "}<a
                   href={data.item.show.external_urls.spotify}
@@ -175,9 +174,7 @@ export default function Spotify() {
               )}
             </p>
           </>
-        ) : (
-          <p>Offline</p>
-        )}
+        ) : null}
       </div>
     </div>
   );

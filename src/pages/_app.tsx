@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 	return (
 		<>
 			<Head>
-				<title>Agcrismanto Budhi Praswastyka</title>
+				<title>Spotify Wrapper?</title>
 
 				<meta
 					name="viewport"

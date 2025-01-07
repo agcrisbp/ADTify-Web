@@ -5,12 +5,6 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
 
 const http = require("http");
 
-function redirectHandler(req, res) {
-  res.statusCode = 301;
-  res.setHeader("Location", "https://twitter.com/agcrisbp");
-  res.end();
-}
-
 /** @type {import("next").NextConfig} */
 const config = {
   reactStrictMode: true,
